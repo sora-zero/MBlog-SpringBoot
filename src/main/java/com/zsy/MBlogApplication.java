@@ -1,13 +1,15 @@
-package mblog.demo;
+package com.zsy;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+@MapperScan("com.zsy.dao")
+public class MBlogApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(MBlogApplication.class, args);
     }
 
 }

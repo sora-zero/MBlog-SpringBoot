@@ -1,13 +1,20 @@
 # TODO List
 
+* start from model and dao layer
+
+-----
+# Design
 * 参考精通Spring中案例的开发流程
 
 * 用SpringBoot重新实现
+    * 在每个测试开始时建立数据库，结束后销毁
+    * 在测试中使用h2数据库
+    * mybatis使用
+    * lombok
     * 数据库设计
     * database desige (mysql, redis)
     * Thymeleaf 使用学习
     * 网页访问流程图
-    * mybatis使用
     * bootstrap, jquery
     * jedis使用
     * flyway 集成 springboot
