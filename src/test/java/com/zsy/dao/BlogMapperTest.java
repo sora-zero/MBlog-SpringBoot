@@ -3,10 +3,7 @@ package com.zsy.dao;
 import com.zsy.BaseApplicationTest;
 import com.zsy.domain.Blog;
 import org.flywaydb.core.Flyway;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -21,8 +18,12 @@ public class BlogMapperTest extends BaseApplicationTest {
 
     @Before
     public void setUpDatabase() {
-        flyway.clean();
         flyway.migrate();
+    }
+
+    @After
+    public void cleanDatabase() {
+        flyway.clean();
     }
 
     @Test
