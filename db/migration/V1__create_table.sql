@@ -25,7 +25,7 @@ INSERT INTO `blog` VALUES (21, 43, '2018-07-01 22:31:12', '2018-07-01 22:31:12',
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`  (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_mysql500_ci NOT NULL,
+  `user_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_mysql500_ci NOT NULL UNIQUE,
   `avatar_id` int(11) NOT NULL DEFAULT 0,
   `md5_password` char(32) CHARACTER SET utf8 COLLATE utf8_general_mysql500_ci NOT NULL,
   PRIMARY KEY (`user_id`) USING BTREE
