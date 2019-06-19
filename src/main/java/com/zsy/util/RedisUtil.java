@@ -25,4 +25,13 @@ public final class RedisUtil {
             return false;
         }
     }
+
+    /**
+     * get value by key
+     * @param key
+     * @return deserialized object
+     */
+    public Object get(String key) {
+        return key == null ? null : redisTemplate.opsForValue().get(key);
+    }
 }
