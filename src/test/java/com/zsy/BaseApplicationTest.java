@@ -8,6 +8,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("dev")
-public class BaseApplicationTest {
+public abstract class BaseApplicationTest {
 
 }
