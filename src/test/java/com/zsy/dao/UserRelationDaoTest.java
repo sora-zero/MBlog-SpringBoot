@@ -34,7 +34,7 @@ public class UserRelationDaoTest extends BaseApplicationTest {
 
     @Test
     public void getFollowingList(){
-        List<Integer> list = userRelationDao.getFollowingId(userId);
+        List<Integer> list = userRelationDao.getFollowingsId(userId);
         Assert.assertTrue(list.contains(followingId));
     }
 }

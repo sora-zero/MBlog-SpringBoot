@@ -41,7 +41,7 @@ public class UserRelationDao {
         return convertObjectSet2IntegerList(ret);
     }
 
-    public List<Integer> getFollowingId(int userId){
+    public List<Integer> getFollowingsId(int userId){
         Set<Object> ret;
         String key = getFollowingNamespace(userId);
         ret = redisUtil.smembers(key);

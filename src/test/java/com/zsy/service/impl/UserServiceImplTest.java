@@ -2,7 +2,6 @@ package com.zsy.service.impl;
 
 import com.zsy.BaseApplicationTest;
 import com.zsy.domain.User;
-import com.zsy.service.UserService;
 import org.flywaydb.core.Flyway;
 import org.junit.After;
 import org.junit.Assert;

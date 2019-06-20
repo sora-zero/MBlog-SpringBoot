@@ -3,6 +3,7 @@ package com.zsy.dao;
 import com.zsy.domain.User;
 import org.apache.ibatis.annotations.*;
 
+@Mapper
 public interface UserMapper {
 
     @Delete("delete from user where user_id = #{id}")

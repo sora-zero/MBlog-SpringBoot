@@ -14,6 +14,8 @@ public class BlogCacheDao {
     RedisUtil redisUtil;
 
     public boolean addBlog(Blog blog){
+        if (blog == null) return false;
+
         String key = BLOG_NAMESPACE + blog.getBlogId();
         return redisUtil.set(key, blog);
     }
