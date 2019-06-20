@@ -11,6 +11,8 @@ import java.util.Set;
 
 /**
  * Mange user relations using redis
+ * Each user has a unique set for storing follower id
+ * and a set for storing following id
  */
 @Repository
 public class UserRelationDao {

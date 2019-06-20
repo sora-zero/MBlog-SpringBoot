@@ -12,31 +12,29 @@ public class UserRelationDaoTest extends BaseApplicationTest {
     @Autowired
     UserRelationDao userRelationDao;
 
+    private static final int userId = 1;
+    private static final int followerId = 2;
+    private static final int followingId = 2;
+
     @Test
     public void addOneFollower(){
-        int userId = 1;
-        int followerId = 2;
         userRelationDao.addFollower(userId, followerId);
     }
 
     @Test
     public void addOneFollowing(){
-        int userId = 1;
-        int followingId = 2;
         userRelationDao.addFollowing(userId, followingId);
     }
 
     @Test
     public void getFollowerList(){
-        int userId = 1;
         List<Integer> list = userRelationDao.getFollowersId(userId);
-        Assert.assertTrue(list.contains(2));
+        Assert.assertTrue(list.contains(followerId));
     }
 
     @Test
     public void getFollowingList(){
-        int userId = 1;
         List<Integer> list = userRelationDao.getFollowingId(userId);
-        Assert.assertTrue(list.contains(2));
+        Assert.assertTrue(list.contains(followingId));
     }
 }
