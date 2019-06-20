@@ -1,6 +1,6 @@
 # TODO List
 
-* start from model and dao layer
+* setup redis test data
 
 -----
 # Design
@@ -13,9 +13,6 @@
     * database desige (mysql, redis)
     * Thymeleaf 使用学习
     * 网页访问流程图
-    * bootstrap, jquery
-    * jedis使用
-    * flyway 集成 springboot
     * bootstrap, jquery
     * springboot使用
     * docker 搭建环境，bash script

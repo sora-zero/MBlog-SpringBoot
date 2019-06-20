@@ -1,7 +1,6 @@
 package com.zsy.service;
 
 import com.zsy.domain.Blog;
-import com.zsy.domain.User;
 
 import java.util.List;
 
