@@ -1,0 +1,7 @@
+change master to master_host='SED_MASTER_IP',
+master_user='repl',
+master_password='password',
+master_log_file='SED_MASTER_LOG_FILE',
+master_log_pos=0;
+
+start slave;
