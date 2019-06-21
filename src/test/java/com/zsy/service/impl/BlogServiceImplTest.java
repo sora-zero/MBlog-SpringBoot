@@ -70,7 +70,7 @@ public class BlogServiceImplTest extends BaseApplicationTest {
 
 
     @Test
-    public void deleteNotExistBlogSouldReturnFalse(){
+    public void deleteNotExistBlogShouldReturnFalse(){
         int userId = 1;
         int blogId = 1;
         blogService.deleteBlogById(userId, blogId);

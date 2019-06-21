@@ -1,26 +1,26 @@
 package com.zsy.controller;
 
 import com.zsy.BaseApplicationTest;
-import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+@AutoConfigureMockMvc
 public class IndexControllerTest extends BaseApplicationTest {
 
+    @Autowired
     private MockMvc mockMvc;
 
-    @Before
-    void setUp(WebApplicationContext wac){
-        this.mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
-    }
 
     @Test
-    void accessIndexWithoutLogin(){
+    public void accessIndexWithoutLogin() throws Exception{
         this.mockMvc.perform(get("/")
-                .accept(MediaType.APPLICATION_FORM_URLENCODED));
+                .accept(MediaType.APPLICATION_FORM_URLENCODED))
+                .andExpect(status().is3xxRedirection());
     }
 }
