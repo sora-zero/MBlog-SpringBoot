@@ -13,8 +13,8 @@
                         usernmae
                     </a>
                 </div>
-                <div class="grey-font" th:text="${blogDetail.blog.publishTime}">
-                    publishtime
+                <div class="grey-font">
+                    <span th:text="${blogDetail.blog.publishTime}">publishtime</span>
                     <a th:if=${isself} id="delete-blog" class="cursor-pointer grey-font" blogid="1" th:blogid="${blogDetail.blog.blogId}">delete</a>
                 </div>
                 <div th:text="${blogDetail.blog.content}">
