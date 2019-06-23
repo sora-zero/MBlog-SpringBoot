@@ -13,7 +13,7 @@ $(document).ready(function ()
     userNameInput.focusout(function ()
     {
         $.ajax({
-            url: "getUserHeadPic.html",
+            url: "getUserAvatar.html",
             type: "post",
             dataType: "text",
             data: {

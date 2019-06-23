@@ -16,7 +16,7 @@ public class SessionUtil {
         request.getSession().setAttribute(USER_SESSION, user);
     }
 
-    public static void removeUser(HttpServletRequest request, User user) {
+    public static void removeUser(HttpServletRequest request) {
         request.getSession().removeAttribute(USER_SESSION);
     }
 

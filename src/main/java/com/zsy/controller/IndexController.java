@@ -1,6 +1,7 @@
 package com.zsy.controller;
 
 import com.zsy.domain.Blog;
+import com.zsy.domain.BlogDetail;
 import com.zsy.domain.User;
 import com.zsy.service.impl.BlogServiceImpl;
 import com.zsy.util.SessionUtil;
@@ -28,8 +29,8 @@ public class IndexController {
             return new ModelAndView("redirect:/login.html");
         }
         ModelAndView modelAndView = new ModelAndView("index");
-        List<Blog> blogs = blogService.getAllBlogByUser(user.getUserId());
-        modelAndView.addObject("blogs", blogs);
+        List<BlogDetail> blogDetails = blogService.getAllBlogForUserHomePage(user.getUserId());
+        modelAndView.addObject("blogDetails", blogDetails);
         modelAndView.addObject("user", user);
         return modelAndView;
     }

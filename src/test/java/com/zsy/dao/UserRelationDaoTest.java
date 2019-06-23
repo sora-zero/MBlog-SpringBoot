@@ -13,8 +13,8 @@ public class UserRelationDaoTest extends BaseApplicationTest {
     UserRelationDao userRelationDao;
 
     private static final int userId = 1;
-    private static final int followerId = 2;
-    private static final int followingId = 2;
+    private static final int followerId = 42;
+    private static final int followingId = 42;
 
     @Test
     public void addOneFollower(){

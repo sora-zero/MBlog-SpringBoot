@@ -17,29 +17,29 @@ public class UserTimeLineDaoTest extends BaseApplicationTest {
     @Test
     public void addBlogToUserTimeLine(){
         int userId = 1;
-        int blogId = 1;
+        int blogId = 13;
         userTimeLineDao.add(userId, blogId);
     }
 
     @Test
-    public void deleteBlogFromUesrTimeLine(){
+    public void deleteBlogFromUserTimeLine(){
         int userId = 1;
-        int blogId = 1;
+        int blogId = 13;
         userTimeLineDao.delete(userId, blogId);
     }
 
     @Test
     public void getUserTimeLine(){
-        int[][] userIdBlogIdArray = new int[][]{{}, {1}, {2}, {3}};
-        for(int userId = 1; userId < userIdBlogIdArray.length; userId++){
-            userTimeLineDao.add(userId, userIdBlogIdArray[userId][0]);
-            try{
-                TimeUnit.SECONDS.sleep(1);
-            } catch (Exception e){
-                e.printStackTrace();
-            }
+        try{
+            userTimeLineDao.add(1, 13);
+            TimeUnit.SECONDS.sleep(1);
+            userTimeLineDao.add(41, 12);
+            TimeUnit.SECONDS.sleep(1);
+            userTimeLineDao.add(43, 21);
+        } catch (Exception e){
+
         }
-        List<Integer> blogIds = userTimeLineDao.get(1,  Arrays.asList(2,3));
+        List<Integer> blogIds = userTimeLineDao.get(1,  Arrays.asList(41,43));
         System.out.println(blogIds);
     }
 

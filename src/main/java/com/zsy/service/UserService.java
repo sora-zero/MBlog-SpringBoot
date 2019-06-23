@@ -6,7 +6,7 @@ public interface UserService {
 
     void addUser(String username, String password, int avatarId) throws IllegalArgumentException;
 
-    boolean checkPassword(User user, String password);
+    boolean checkPassword(String userName, String password);
 
     boolean isUserNameValid(String username);
 

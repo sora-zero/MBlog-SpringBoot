@@ -1,0 +1,27 @@
+<div id="blog-1" th:fragment="frag (blogDetail, isself)" th:id="'blog-' + ${blogDetail.blog.blogId}" class="panel panel-default">
+    <div class="panel-body">
+        <div class="media">
+            <div class="media-left">
+                <a>
+                    <img src="/images/1.png" th:src="@{/images/{avatarId}.png(avatarId=${blogDetail.user.avatarId})}"
+                         style="width:100px;height:100px" alt="">
+                </a>
+            </div>
+            <div class="media-body">
+                <div>
+                    <a href="/user.html?userId=1" th:href="@{/user.html(userId=${blogDetail.blog.userId})}" th:text="${blogDetail.user.userName}"style="font-size: 25px">
+                        usernmae
+                    </a>
+                </div>
+                <div class="grey-font" th:text="${blogDetail.blog.publishTime}">
+                    publishtime
+                    <a th:if=${isself} id="delete-blog" class="cursor-pointer grey-font" blogid="1" th:blogid="${blogDetail.blog.blogId}">delete</a>
+                </div>
+                <div th:text="${blogDetail.blog.content}">
+                   content
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

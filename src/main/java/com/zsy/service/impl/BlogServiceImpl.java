@@ -2,6 +2,8 @@ package com.zsy.service.impl;
 
 import com.zsy.dao.*;
 import com.zsy.domain.Blog;
+import com.zsy.domain.BlogDetail;
+import com.zsy.domain.User;
 import com.zsy.service.BlogService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +36,7 @@ public class BlogServiceImpl implements BlogService {
     private UserRelationDao userRelationDao;
 
     @Override
-    public List<Blog> getAllBlogForUserHomePage(int userId){
+    public List<BlogDetail> getAllBlogForUserHomePage(int userId){
 
         List<Integer> followingIds = userRelationDao.getFollowingsId(userId);
         List<Integer> blogIds = userTimeLineDao.get(userId, followingIds);
@@ -42,7 +44,18 @@ public class BlogServiceImpl implements BlogService {
         for(int blogId : blogIds){
             blogs.add(getBlogByBlogId(blogId));
         }
-        return blogs;
+        return blogToBlogDetail(blogs);
+    }
+
+    private List<BlogDetail> blogToBlogDetail(List<Blog> blogs){
+        List<BlogDetail> blogDetails = new ArrayList<>(blogs.size());
+        for(Blog blog : blogs){
+            User user = userMapper.selectById(blog.getUserId());
+            BlogDetail blogDetail = new BlogDetail(blog, user);
+            blogDetails.add(blogDetail);
+        }
+        return blogDetails;
+
     }
 
     @Override
@@ -59,8 +72,8 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public List<Blog> getAllBlogByUser(int userId) {
-        return blogMapper.selectAllByUserId(userId);
+    public List<BlogDetail> getAllBlogByUser(int userId) {
+        return blogToBlogDetail(blogMapper.selectAllByUserId(userId));
     }
 
     @Override

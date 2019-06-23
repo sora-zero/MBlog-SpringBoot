@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Center</title>
+    <div th:replace="~{common/head}"></div>
+</head>
+<body>
+<div th:replace="~{common/navbar}"></div>
+
+<link href="/css/index.css" th:href="@{/css/index.css}" rel="stylesheet">
+
+<div class="container ">
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-xs-0"></div>
+        <div class="col-lg-8 col-md-8 col-xs-12">
+
+            <div class="panel panel-default">
+                <div class="panel-body" align="center">
+
+                    <img src="/images/1.png" th:src="@{/images/{picId}.png(picId=${user.avatarId})}"
+                         style="width: 150px;height:150px" alt="">
+                    <br>
+                    <p style="font-size: 18px" th:text="${user.userName}"> username </p>
+                        <a th:if="${user != sessionUser}" href="follow.html?userId=1" th:href="@{/follow.html(userId=${user.userId})}">Follow</a>
+                    <br>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4" align="center">
+                            <a href="user.html?userId=1&contentType=blog" th:href="@{/user.html(userId=${user.userId}, contentType='blog')}">Blog</a>
+                        </div>
+                        <div class="col-md-4 col-xs-4" align="center">
+                            <a href="user.html?userId=1&contentType=followers" th:href="@{/user.html(userId=${user.userId}, contentType='followers')}">Followers</a>
+                        </div>
+                        <div class="col-md-4 col-xs-4" align="center">
+                            <a href="user.html?userId=1&contentType=followings" th:href="@{/user.html(userId=${user.userId}, contentType='followings')}">Followings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div th:if="${contentType=='blog'}" th:each="blogDetail : ${blogDetails}">
+                     <div th:replace="~{common/blog::frag(${blogDetail}, ${blogDetail.blog.userId == user.userId})}"></div>
+                </div>
+                <div th:if="${contentType=='followers' || contentType =='followings'}" th:each="f : ${follows}" class="panel panel-default">
+                    <div class="panel-body">
+                        <div align="center">
+                            <img src="/images/1.png" th:src="@{/images/{picId}.png(picId=${f.avatarId})}"
+                                 style="width: 80px;height:80px" alt=""><br>
+                            <a href="user.html?userId=1" th:href="@{/user.html(userId=${f.userId})}" th:text="${f.userName}" style="font-size: 18px">username</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-lg-2 col-md-2 col-xs-0"></div>
+    </div>
+</div>
+
+<div th:replace="~{common/foot}"> </div>
+
+</body>
+</html>
+

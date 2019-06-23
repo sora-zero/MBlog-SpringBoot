@@ -49,17 +49,15 @@ public class UserServiceImplTest extends BaseApplicationTest {
     @Test
     public void checkPassowrdIsValid(){
         String username = "root";
-        User user = userService.getUserByName(username);
         String password = "test";
-        Assert.assertTrue(userService.checkPassword(user, password));
+        Assert.assertTrue(userService.checkPassword(username, password));
     }
 
     @Test
-    public void checkPassowrdIsInvalid(){
+    public void checkPasswordIsInvalid(){
         String username = "root";
-        User user = userService.getUserByName(username);
         String password = "incorrect";
-        Assert.assertFalse(userService.checkPassword(user, password));
+        Assert.assertFalse(userService.checkPassword(username, password));
     }
 
     @Test

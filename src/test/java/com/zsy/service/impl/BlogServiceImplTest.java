@@ -2,6 +2,7 @@ package com.zsy.service.impl;
 
 import com.zsy.BaseApplicationTest;
 import com.zsy.domain.Blog;
+import com.zsy.domain.BlogDetail;
 import org.flywaydb.core.Flyway;
 import org.junit.After;
 import org.junit.Assert;
@@ -36,14 +37,14 @@ public class BlogServiceImplTest extends BaseApplicationTest {
     @Test
     public void getAllBlogForUserHomePage(){
        int userId = 1;
-       List<Blog> blogs = blogService.getAllBlogForUserHomePage(userId);
+       List<BlogDetail> blogs = blogService.getAllBlogForUserHomePage(userId);
     }
 
 
     @Test
     public void getAllBlogByUser(){
         int userId = 1;
-        List<Blog> blogs = blogService.getAllBlogByUser(userId);
+        List<BlogDetail> blogs = blogService.getAllBlogByUser(userId);
     }
 
     @Test
@@ -58,7 +59,6 @@ public class BlogServiceImplTest extends BaseApplicationTest {
         int userId = 1;
         String content = "addOneBlog test";
         blogService.addOneBlog(userId, content);
-
     }
 
     @Test

@@ -1,6 +1,6 @@
 # TODO List
 
-* setup redis test data
+* controller test case
 
 -----
 # Design
@@ -10,7 +10,7 @@
     * mybatis使用
     * lombok
     * 数据库设计
-    * database desige (mysql, redis)
+    * database design (mysql, redis)
     * Thymeleaf 使用学习
     * 网页访问流程图
     * bootstrap, jquery
@@ -19,6 +19,6 @@
 * 尝试各种编码准则
 * 分别在应用层和中间件实现读写分离
 [使用Spring实现读写分离（ MySQL实现主从复制）](https://blog.csdn.net/jack85986370/article/details/51559232)
-* 设置 redis集群
+* 设置 redis 集群
 * 前后端分离?
 * nginx 静态资源分离?

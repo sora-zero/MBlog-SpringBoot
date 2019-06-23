@@ -24,6 +24,9 @@ docker run, 配置文件同样要修改为绝对路径
 查看容器ip地址
 `docker inspect master-mysql |grep IPAddress`
 
+查看主服务器的二进制文件名
+`mysql > show master status;`
+
 修改sql脚本的设置
 
 master_mysql.sql:

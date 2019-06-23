@@ -9,6 +9,6 @@ public class Blog {
     private int blogId;
     private int userId;
     private Date publishTime;
-    private Date UpdateTime;
+    private Date updateTime;
     private String content;
 }

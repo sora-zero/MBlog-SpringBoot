@@ -27,7 +27,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean checkPassword(User user, String password){
+    public boolean checkPassword(String userName, String password){
+        User user = userMapper.selectByName(userName);
         String userPassword = user.getMd5Password();
         String pwdMd5 = MD5.getMD5(password);
         return userPassword.equals(pwdMd5);

@@ -34,8 +34,8 @@ CREATE TABLE `user`  (
 INSERT INTO `user` VALUES (1, 'root', 1, '098f6bcd4621d373cade4e832627b4f6');
 INSERT INTO `user` VALUES (41, 'user1', 4, '098f6bcd4621d373cade4e832627b4f6');
 INSERT INTO `user` VALUES (42, 'user2', 2, '098f6bcd4621d373cade4e832627b4f6');
-INSERT INTO `user` VALUES (43, 'user4', 3, '098f6bcd4621d373cade4e832627b4f6');
-INSERT INTO `user` VALUES (44, 'user3', 4, '098f6bcd4621d373cade4e832627b4f6');
-INSERT INTO `user` VALUES (45, 'user6', 2, '098f6bcd4621d373cade4e832627b4f6');
+INSERT INTO `user` VALUES (43, 'user3', 3, '098f6bcd4621d373cade4e832627b4f6');
+INSERT INTO `user` VALUES (44, 'user4', 4, '098f6bcd4621d373cade4e832627b4f6');
+INSERT INTO `user` VALUES (45, 'user5', 2, '098f6bcd4621d373cade4e832627b4f6');
 
 SET FOREIGN_KEY_CHECKS = 1;
